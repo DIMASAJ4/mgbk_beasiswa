@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'MGBK Beasiswa') }} - Admin Portal</title>
+    <title>{{ config('app.name', 'Pejuang Sukses') }} - Admin Portal</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +28,10 @@
         {{-- Sidebar Header --}}
         <div class="px-5 py-6 border-b border-slate-900">
             <div class="flex items-center gap-2.5 mb-1">
-                <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
+                <img src="{{ asset('images/logo1.png') }}" alt="Logo Pejuang Sukses" class="h-9 w-9 object-contain rounded-xl">
                 <div>
                     <p class="text-xs font-extrabold text-white leading-tight">Admin Portal</p>
-                    <p class="text-[10px] text-slate-500 font-medium">Management System</p>
+                    <p class="text-[10px] text-slate-500 font-medium">Pejuang Sukses</p>
                 </div>
             </div>
         </div>
@@ -108,8 +107,8 @@
         {{-- Footer --}}
         <footer class="bg-white border-t border-slate-100 py-6 px-8 flex items-center justify-between">
             <div>
-                <p class="text-sm font-bold text-slate-700">MGBK Indonesia</p>
-                <p class="text-xs text-slate-400 mt-0.5">&copy; 2024 MGBK Indonesia. All rights reserved.</p>
+                <p class="text-sm font-bold text-slate-700">Pejuang Sukses</p>
+                <p class="text-xs text-slate-400 mt-0.5">&copy; 2026 Pejuang Sukses. All rights reserved.</p>
             </div>
             <div class="flex gap-6 text-xs font-semibold text-slate-400">
                 <a href="#" class="hover:text-slate-600">Privacy Policy</a>

@@ -5,11 +5,9 @@
             <div class="flex items-center gap-8">
                 <!-- Logo -->
                 <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
-                    <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/10">
-                        <i class="fa-solid fa-graduation-cap text-lg"></i>
-                    </div>
+                    <img src="{{ asset('images/logo1.png') }}" alt="Logo Pejuang Sukses" class="h-10 w-10 object-contain rounded-xl">
                     <span class="heading-font text-lg font-extrabold tracking-wider bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent">
-                        MGBK <span class="text-indigo-400">PORTAL</span>
+                        PEJUANG <span class="text-indigo-400">SUKSES</span>
                     </span>
                 </a>
 

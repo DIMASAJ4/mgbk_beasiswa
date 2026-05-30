@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'MGBK Beasiswa') }} - Masuk</title>
+    <title>{{ config('app.name', 'Pejuang Sukses') }} - Masuk</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,12 +39,10 @@
         <div class="relative z-10">
             <!-- Brand Logo -->
             <div class="flex items-center gap-3">
-                <div class="h-10 w-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
-                    <i class="fa-solid fa-graduation-cap text-xl"></i>
-                </div>
+                <img src="{{ asset('images/logo1.png') }}" alt="Logo Pejuang Sukses" class="h-10 w-10 object-contain rounded-xl">
                 <div>
-                    <h2 class="heading-font text-base font-extrabold text-white leading-tight">MGBK Beasiswa</h2>
-                    <p class="text-[10px] text-blue-200 font-bold uppercase tracking-wider">Musyawarah Guru BK</p>
+                    <h2 class="heading-font text-base font-extrabold text-white leading-tight">Pejuang Sukses</h2>
+                    <p class="text-[10px] text-blue-200 font-bold uppercase tracking-wider">Portal Beasiswa</p>
                 </div>
             </div>
         </div>
@@ -54,7 +53,7 @@
                 Wujudkan Masa Depan Gemilang Melalui Pendidikan.
             </h1>
             <p class="text-blue-100/80 text-xs sm:text-sm font-medium mt-4 leading-relaxed max-w-md">
-                Aplikasi pendaftaran, pencocokan cerdas, dan rekomendasi beasiswa MGBK berbasis kompetensi akademik serta minat karir siswa.
+                Aplikasi pendaftaran, pencocokan cerdas, dan rekomendasi beasiswa Pejuang Sukses berbasis kompetensi akademik serta minat karir siswa.
             </p>
 
             {{-- Tablet Mockup --}}
@@ -100,7 +99,7 @@
 
         <!-- Left Panel Footer -->
         <div class="relative z-10 hidden md:block">
-            <p class="text-[10px] text-blue-200/60 font-semibold uppercase tracking-wider">&copy; 2024 MGBK Beasiswa</p>
+            <p class="text-[10px] text-blue-200/60 font-semibold uppercase tracking-wider">&copy; 2026 Pejuang Sukses</p>
         </div>
     </div>
 
@@ -142,7 +141,7 @@
                                type="email" 
                                name="email" 
                                value="{{ old('email') }}" 
-                               placeholder="Contoh: guru@mgbk.mail"
+                               placeholder="Contoh: user@pejuangsukses.id"
                                required 
                                autofocus />
                     </div>
@@ -197,7 +196,7 @@
 
             <!-- Support CTA -->
             <div class="text-center pt-2">
-                <a href="mailto:support@mgbk.id" class="text-[11px] text-slate-450 hover:text-[#1a3d6e] font-bold transition-all">
+                <a href="mailto:support@pejuangsukses.id" class="text-[11px] text-slate-450 hover:text-[#1a3d6e] font-bold transition-all">
                     Kesulitan masuk? Hubungi Admin
                 </a>
             </div>
@@ -206,7 +205,7 @@
         <!-- Right Panel Footer -->
         <div class="text-center pt-8 border-t border-slate-100">
             <p class="text-[10px] text-slate-450 font-black tracking-wider uppercase">
-                MUSYAWARAH GURU BK KOTA PADANGSIDIMPUAN
+                PEJUANG SUKSES
             </p>
         </div>
     </div>

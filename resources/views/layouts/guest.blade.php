@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Pejuang Sukses') }}</title>
+        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
         <!-- Fonts & Icons -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,15 +42,12 @@
         <div class="absolute top-[10%] left-[10%] w-[350px] h-[350px] rounded-full bg-indigo-600 glow-blob -z-10"></div>
         <div class="absolute bottom-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-purple-600 glow-blob -z-10"></div>
 
-        <!-- Portal Branding Header -->
         <div class="mb-8 flex flex-col items-center">
             <a href="/" class="flex items-center gap-3 hover:scale-105 transition-transform duration-200">
-                <div class="h-12 w-12 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
-                    <i class="fa-solid fa-graduation-cap text-2xl"></i>
-                </div>
+                <img src="{{ asset('images/logo1.png') }}" alt="Logo Pejuang Sukses" class="h-14 w-14 object-contain">
             </a>
             <h2 class="heading-font text-2xl font-extrabold tracking-wider bg-gradient-to-r from-white via-slate-100 to-indigo-300 bg-clip-text text-transparent mt-4">
-                MGBK <span class="text-indigo-400">BEASISWA</span>
+                PEJUANG <span class="text-indigo-400">SUKSES</span>
             </h2>
             <p class="text-slate-500 text-xs mt-1 font-medium uppercase tracking-widest">Portal Pendaftaran Premium</p>
         </div>

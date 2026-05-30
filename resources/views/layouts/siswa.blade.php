@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'MGBK Beasiswa') }} - Siswa Portal</title>
+    <title>{{ config('app.name', 'Pejuang Sukses') }} - Siswa Portal</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,11 +32,9 @@
     <header class="h-16 bg-white border-b border-slate-200 sticky top-0 z-20 flex items-center justify-between px-8 shadow-sm">
         <!-- Logo Left -->
         <div class="flex items-center gap-2.5">
-            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-[#1a3d6e] to-[#1D9E75] flex items-center justify-center text-white">
-                <i class="fa-solid fa-graduation-cap text-lg"></i>
-            </div>
+            <img src="{{ asset('images/logo1.png') }}" alt="Logo Pejuang Sukses" class="h-9 w-9 object-contain rounded-xl">
             <div>
-                <span class="heading-font text-sm font-extrabold text-[#1a3d6e] leading-tight block">MGBK Beasiswa</span>
+                <span class="heading-font text-sm font-extrabold text-[#1a3d6e] leading-tight block">Pejuang Sukses</span>
                 <span class="text-[9px] text-[#1D9E75] font-bold uppercase tracking-wider block">Siswa Portal</span>
             </div>
         </div>
@@ -105,7 +104,7 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-500 font-semibold">&copy; 2024 MGBK Indonesia. All rights reserved.</p>
+        <p class="text-xs text-slate-500 font-semibold">&copy; 2026 Pejuang Sukses. All rights reserved.</p>
         <div class="flex gap-5 text-[11px] font-bold text-slate-400">
             <a href="#" class="hover:text-slate-600">Kebijakan Privasi</a>
             <span class="text-slate-200">|</span>

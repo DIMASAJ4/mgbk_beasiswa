@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>MGBK Beasiswa | Portal Beasiswa Konseling Premium</title>
+        <title>Pejuang Sukses | Portal Beasiswa Premium</title>
+        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
         <!-- Fonts & Icons -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,11 +59,9 @@
             <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-3">
-                    <div class="h-11 w-11 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
-                        <i class="fa-solid fa-graduation-cap text-xl"></i>
-                    </div>
+                    <img src="{{ asset('images/logo1.png') }}" alt="Logo Pejuang Sukses" class="h-11 w-11 object-contain rounded-xl">
                     <span class="heading-font text-xl font-extrabold tracking-wider bg-gradient-to-r from-white via-slate-100 to-indigo-300 bg-clip-text text-transparent">
-                        MGBK <span class="text-indigo-400">BEASISWA</span>
+                        PEJUANG <span class="text-indigo-400">SUKSES</span>
                     </span>
                 </a>
 
@@ -105,18 +104,18 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                     </span>
-                    Portal Beasiswa MGBK v1.0
+                    Portal Beasiswa Pejuang Sukses v1.0
                 </div>
 
                 <h1 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none mb-6">
                     Raih Masa Depanmu <br>
                     <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                        Bersama Beasiswa MGBK
+                        Bersama Pejuang Sukses
                     </span>
                 </h1>
 
                 <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed mb-8">
-                    Portal resmi Musyawarah Guru Bimbingan Konseling (MGBK) untuk pendaftaran, seleksi, dan penyaluran beasiswa bagi siswa-siswi berprestasi. Transparan, terpercaya, dan inklusif.
+                    Portal resmi Pejuang Sukses untuk pendaftaran, seleksi, dan penyaluran beasiswa bagi siswa-siswi berprestasi. Transparan, terpercaya, dan inklusif.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
@@ -193,7 +192,7 @@
                             </div>
                             <div>
                                 <h5 class="text-xs font-bold text-slate-300">Seleksi & Verifikasi</h5>
-                                <p class="text-[10px] text-slate-500 mt-1">Verifikasi dokumen oleh tim verifikator ahli MGBK.</p>
+                                <p class="text-[10px] text-slate-500 mt-1">Verifikasi dokumen oleh tim verifikator ahli Pejuang Sukses.</p>
                             </div>
                         </div>
                     </div>
@@ -205,7 +204,7 @@
                         </div>
                         <div class="flex-1">
                             <div class="text-[11px] font-bold text-white flex justify-between">
-                                <span>Beasiswa Prestasi MGBK</span>
+                                <span>Beasiswa Prestasi Pejuang Sukses</span>
                                 <span class="text-slate-500 font-semibold text-[9px]">Baru</span>
                             </div>
                             <p class="text-[10px] text-slate-400 mt-0.5">Pendaftaran resmi dibuka mulai hari ini.</p>
@@ -243,7 +242,7 @@
                         </div>
                         <h3 class="heading-font text-lg font-bold text-white mb-3">Verifikasi Objektif</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Tim verifikator MGBK yang kompeten melakukan peninjauan secara transparan tanpa intervensi pihak luar.
+                            Tim verifikator Pejuang Sukses yang kompeten melakukan peninjauan secara transparan tanpa intervensi pihak luar.
                         </p>
                     </div>
 
@@ -294,7 +293,7 @@
                         3
                     </div>
                     <h4 class="text-base font-bold text-white mb-2">Unggah Berkas</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed max-w-[200px]">Unggah berkas pendaftaran dan Surat Rekomendasi Guru BK MGBK.</p>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-[200px]">Unggah berkas pendaftaran dan Surat Rekomendasi Guru BK.</p>
                 </div>
 
                 <!-- Step 4 -->
@@ -318,7 +317,7 @@
                     Mulai Langkah Suksesmu Hari Ini!
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
-                    Jangan lewatkan kesempatan emas untuk mengenyam pendidikan tinggi dengan dukungan dana penuh dari program Beasiswa MGBK.
+                    Jangan lewatkan kesempatan emas untuk mengenyam pendidikan tinggi dengan dukungan dana penuh dari program Pejuang Sukses.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -337,11 +336,9 @@
             <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 <!-- Branding -->
                 <div class="flex items-center gap-3">
-                    <div class="h-8 w-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
+                    <img src="{{ asset('images/logo1.png') }}" alt="Logo Pejuang Sukses" class="h-8 w-8 object-contain">
                     <span class="heading-font font-bold text-sm text-white uppercase tracking-wider">
-                        Portal MGBK Beasiswa © 2026
+                        Portal Pejuang Sukses © 2026
                     </span>
                 </div>
 
