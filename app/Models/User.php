@@ -7,11 +7,12 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -45,5 +46,21 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Get the student profile data if the user is a student.
+     */
+    public function dataSiswa(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(DataSiswa::class, 'user_id');
+    }
+
+    /**
+     * Get the recommendations authored by this BK teacher.
+     */
+    public function rekomendasis(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Rekomendasi::class, 'guru_bk_id');
     }
 }
