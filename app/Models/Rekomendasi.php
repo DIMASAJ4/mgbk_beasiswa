@@ -21,7 +21,10 @@ class Rekomendasi extends Model
         'dipilih_siswa',
         'dipilih_at',
     ];
-
+    protected $casts = [
+        'dipilih_at' => 'datetime',
+        'dipilih_siswa' => 'boolean',
+    ];
     /**
      * Scope for recommendations chosen by students.
      */
