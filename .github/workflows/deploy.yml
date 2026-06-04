@@ -1,0 +1,54 @@
+name: 🚀 Deploy Website via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: 🎉 Build & Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 1. Checkout repository ke environment GitHub Runner
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    # 2. Setup Node.js untuk keperluan build frontend
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    # 3. Install dependencies & build Vite assets
+    - name: 📦 Install and Build Frontend
+      run: |
+        npm ci
+        npm run build
+
+    # 4. Sinkronisasi file ke server hosting menggunakan FTP
+    - name: 📂 Sync files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
+        # folder lokal yang dikirim (semua isi root proyek)
+        local-dir: ./
+        # folder tujuan di FTP. Sesuaikan jika proyek Anda diletakkan di htdocs/ atau htdocs/mgbk-beasiswa/
+        server-dir: htdocs/
+        # Mengabaikan file yang tidak perlu diupload ke server production
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.github/**
+          **/tests/**
+          README.md
+          package-lock.json
+          vite.config.js
+          tailwind.config.js
+          postcss.config.js
+          composer.lock
+          .env.example
