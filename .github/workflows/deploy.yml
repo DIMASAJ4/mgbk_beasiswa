@@ -11,23 +11,49 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    # 1. Checkout repository ke environment GitHub Runner
+    # 1. Checkout repository
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
 
-    # 2. Setup Node.js untuk keperluan build frontend
+    # 2. Setup Node.js
     - name: 🟢 Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
 
-    # 3. Install dependencies & build Vite assets
+    # 3. Setup PHP for Composer
+    - name: 🐘 Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+
+    # 4. Install Composer dependencies (vendor/)
+    - name: 📦 Install Composer Dependencies
+      run: composer install --no-dev --optimize-autoloader --no-interaction
+
+    # 5. Install Node dependencies & build Vite assets
     - name: 📦 Install and Build Frontend
       run: |
         npm ci
         npm run build
 
-    # 4. Sinkronisasi file ke server hosting menggunakan FTP
+    # 6. Create .env from GitHub secret
+    - name: 🔧 Create .env file
+      run: |
+        echo "${{ secrets.ENV_FILE }}" > .env
+
+    # 7. Create required storage directories
+    - name: 📁 Prepare storage directories
+      run: |
+        mkdir -p storage/app/public
+        mkdir -p storage/framework/cache
+        mkdir -p storage/framework/sessions
+        mkdir -p storage/framework/views
+        mkdir -p storage/logs
+        mkdir -p bootstrap/cache
+        touch storage/logs/laravel.log
+
+    # 8. Sinkronisasi file ke server hosting menggunakan FTP
     - name: 📂 Sync files via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -36,8 +62,6 @@ jobs:
         password: ${{ secrets.FTP_PASS }}
         local-dir: ./
         server-dir: htdocs/
-        dangerous-clean-slate: true
-        log-level: verbose
         exclude: |
           **/.git*
           **/.git*/**
@@ -49,11 +73,10 @@ jobs:
           vite.config.js
           tailwind.config.js
           postcss.config.js
-          composer.lock
           .env.example
 
-    # 5. Clear cache di server setelah deploy
+    # 9. Clear cache di server setelah deploy
     - name: 🧹 Clear server cache
       run: |
-        sleep 5
-        curl -s -o /dev/null -w "Cache clear HTTP status: %{http_code}\n" https://pejuangsukses.xo.je/clear-cache || true
+        sleep 10
+        curl -s https://pejuangsukses.xo.je/clear-cache || true
