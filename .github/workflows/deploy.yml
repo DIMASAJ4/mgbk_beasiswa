@@ -34,11 +34,10 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        # folder lokal yang dikirim (semua isi root proyek)
         local-dir: ./
-        # folder tujuan di FTP. Sesuaikan jika proyek Anda diletakkan di htdocs/ atau htdocs/mgbk-beasiswa/
         server-dir: htdocs/
-        # Mengabaikan file yang tidak perlu diupload ke server production
+        dangerous-clean-slate: true
+        log-level: verbose
         exclude: |
           **/.git*
           **/.git*/**
@@ -56,4 +55,5 @@ jobs:
     # 5. Clear cache di server setelah deploy
     - name: 🧹 Clear server cache
       run: |
-        curl -s -o /dev/null -w "%{http_code}" https://pejuangsukses.xo.je/clear-cache || true
+        sleep 5
+        curl -s -o /dev/null -w "Cache clear HTTP status: %{http_code}\n" https://pejuangsukses.xo.je/clear-cache || true
