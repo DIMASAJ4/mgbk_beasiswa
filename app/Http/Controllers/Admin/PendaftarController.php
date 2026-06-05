@@ -108,7 +108,7 @@ class PendaftarController extends Controller
                     number_format($p->dataSiswa->nilai_rata, 2),
                     ucwords(str_replace('_', ' ', $p->dataSiswa->kondisi_ekonomi)),
                     ucwords(str_replace('_', ' ', $p->direkomendasikan_oleh)),
-                    $p->dipilih_at ? (($p->dipilih_at instanceof \DateTimeInterface) ? $p->dipilih_at->format('d M Y') : \Carbon\Carbon::parse($p->dipilih_at)->format('d M Y')) : '-'
+                    $p->dipilih_at ? date('d M Y', strtotime($p->dipilih_at)) : '-'
                 ]);
             }
             fclose($file);

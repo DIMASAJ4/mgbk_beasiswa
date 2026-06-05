@@ -85,3 +85,12 @@ Route::get('/run-migration', function () {
         return 'Error: ' . $e->getMessage();
     }
 });
+
+// Clear all caches after deployment
+Route::get('/clear-cache', function () {
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('config:clear');
+    \Illuminate\Support\Facades\Artisan::call('route:clear');
+    return 'All caches cleared successfully!';
+});

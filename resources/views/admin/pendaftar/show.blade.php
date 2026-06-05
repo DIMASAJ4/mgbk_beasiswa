@@ -106,7 +106,7 @@
                                     @endif
                                 </td>
                                 <td class="py-4 px-6 text-slate-500 font-semibold">
-                                    {{ $p->dipilih_at ? (($p->dipilih_at instanceof \DateTimeInterface) ? $p->dipilih_at->format('d M Y') : \Carbon\Carbon::parse($p->dipilih_at)->format('d M Y')) : '-' }}
+                                    {{ $p->dipilih_at ? date('d M Y', strtotime($p->dipilih_at)) : '-' }}
                                 </td>
                             </tr>
                         @empty

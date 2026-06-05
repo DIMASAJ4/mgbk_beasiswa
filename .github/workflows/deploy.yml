@@ -52,3 +52,8 @@ jobs:
           postcss.config.js
           composer.lock
           .env.example
+
+    # 5. Clear cache di server setelah deploy
+    - name: 🧹 Clear server cache
+      run: |
+        curl -s -o /dev/null -w "%{http_code}" https://pejuangsukses.xo.je/clear-cache || true
