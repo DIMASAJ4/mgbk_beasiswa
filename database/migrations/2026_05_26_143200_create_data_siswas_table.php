@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('data_siswas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->decimal('nilai_rata', 4, 2);
+            $table->decimal('nilai_rata', 5, 2);
             $table->text('prestasi')->nullable();
             $table->enum('kondisi_ekonomi', ['mampu', 'kurang_mampu', 'tidak_mampu']);
             $table->json('minat_jurusan')->nullable();
