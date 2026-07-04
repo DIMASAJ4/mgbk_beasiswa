@@ -90,7 +90,8 @@ class PenggunaController extends Controller
      */
     public function createSiswa()
     {
-        return view('admin.pengguna.create_siswa');
+        $sekolahs = User::role('Guru BK')->whereNotNull('sekolah')->distinct()->pluck('sekolah');
+        return view('admin.pengguna.create_siswa', compact('sekolahs'));
     }
 
     /**

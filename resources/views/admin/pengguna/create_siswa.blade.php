@@ -56,8 +56,13 @@
                     {{-- Sekolah --}}
                     <div>
                         <label for="sekolah" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Sekolah Asal</label>
-                        <input type="text" id="sekolah" name="sekolah" required value="{{ old('sekolah') }}" placeholder="Contoh: SMA Negeri 1 Jakarta"
-                               class="w-full px-4 py-3 bg-white border border-slate-200 focus:border-[#1D9E75] focus:ring-1 focus:ring-[#1D9E75] rounded-xl text-xs text-slate-700 placeholder-slate-400 transition-all shadow-sm">
+                        <select id="sekolah" name="sekolah" required
+                                class="w-full px-4 py-3 bg-white border border-slate-200 focus:border-[#1D9E75] focus:ring-1 focus:ring-[#1D9E75] rounded-xl text-xs text-slate-700 transition-all shadow-sm">
+                            <option value="" disabled selected>Pilih Sekolah Binaan...</option>
+                            @foreach($sekolahs as $sekolah)
+                                <option value="{{ $sekolah }}" {{ old('sekolah') == $sekolah ? 'selected' : '' }}>{{ $sekolah }}</option>
+                            @endforeach
+                        </select>
                         @error('sekolah') <p class="text-rose-600 text-[10px] mt-1 font-semibold">{{ $message }}</p> @enderror
                     </div>
 
