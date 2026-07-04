@@ -23,6 +23,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'avatar',
+        'nip',
+        'nisn',
+        'sekolah',
+        'kelas',
+        'no_hp',
     ];
 
     /**
